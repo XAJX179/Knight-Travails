@@ -8,5 +8,10 @@ module KnightTravails
     def initialize(direction = 0)
       @current_direction = @@directions[direction]
     end
+
+    # changes the direction of knight
+    def change_direction(direction)
+      @current_direction = @@directions[direction]
+    end
   end
 end

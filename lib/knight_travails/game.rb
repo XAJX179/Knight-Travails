@@ -13,6 +13,7 @@ module KnightTravails
     def knight_moves(start, stop)
       pp start
       @board.insert(start, @knight)
+      pp stop
       @board.insert(stop, 'S')
     end
   end
