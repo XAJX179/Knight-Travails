@@ -4,9 +4,9 @@
 module KnightTravails
   # A Knight piece of Chess game
   class Knight
+    @@directions = ['-x', '+y', '+x', '-y'] # google x-axis and y-axis # rubocop:disable Style/ClassVars
     def initialize(direction = 0)
-      @directions = ['-x', '+y', '+x', '-y'] # google x-axis and y-axis
-      @current_direction = @directions[direction]
+      @current_direction = @@directions[direction]
     end
   end
 end

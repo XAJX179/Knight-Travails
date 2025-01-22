@@ -17,9 +17,9 @@ module KnightTravails
       }
     end
 
-    # inserts a knight in the Board (represented by 'k')
-    def insert_knight((x_coord, y_coord))
-      @data[y_coord][x_coord] = 'k'
+    # inserts a data in the Board
+    def insert((x_coord, y_coord), data)
+      @data[y_coord][x_coord] = data
       pp @data
     end
   end

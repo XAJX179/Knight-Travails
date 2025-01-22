@@ -9,10 +9,11 @@ module KnightTravails
       @knight = Knight.new
     end
 
-    # use shortest path for knight from start to end printing each move along the way.
-    def knight_moves(start, _stop)
+    # find shortest path for knight from start to end printing each stop along the way.
+    def knight_moves(start, stop)
       pp start
-      @board.insert_knight(start)
+      @board.insert(start, @knight)
+      @board.insert(stop, 'S')
     end
   end
 end
