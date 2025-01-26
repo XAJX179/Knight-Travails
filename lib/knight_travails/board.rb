@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'display'
+
 # Knight Travails
 module KnightTravails
   # Board of Classic 8x8 Chess
@@ -18,6 +20,8 @@ module KnightTravails
         0 => ['', '', '', '', '', '', '', '']
       }
     end
+
+    include Display
 
     # inserts a data in the Board
     def insert((x_coord, y_coord), data)

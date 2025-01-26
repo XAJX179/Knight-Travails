@@ -14,6 +14,8 @@ module KnightTravails
     def knight_moves(start, stop)
       @board.insert(start, @knight)
       @board.insert(stop, 'S')
+
+      pp @board.to_s
     end
 
     def all_possible_moves(coord)
