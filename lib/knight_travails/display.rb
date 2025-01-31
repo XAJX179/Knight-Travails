@@ -10,7 +10,7 @@ module KnightTravails
         print_values(value)
         print "\n"
       end
-      print "     x->  0  1  2  3  4  5  6  7\n"
+      print "     x->  0  1  2  3  4  5  6  7\n\n"
     end
 
     def print_values(value) # rubocop:disable Metrics/MethodLength
