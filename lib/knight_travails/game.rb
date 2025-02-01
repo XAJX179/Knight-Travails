@@ -15,8 +15,7 @@ module KnightTravails
       @board.insert(start, @knight)
       @board.insert(stop, 'S')
 
-      pp @board.at([3, 3]) == 'S'
-      paths = all_possible_paths(start)
+      paths = find_shortest_path(start)
       pp "paths => #{paths}"
 
       @board.to_s
@@ -32,24 +31,33 @@ module KnightTravails
       array
     end
 
-    # finds each possible path
-    def all_possible_paths(coord, curr_path = [], paths = [])
-      pp "coord => #{coord}"
-      pp "curr_path => #{curr_path}"
-      return curr_path << coord if curr_path.include?(coord)
+    # find shortest path
+    def find_shortest_path(coord)
+      queue = [{ '' => coord }]
 
-      curr_path << coord
-      return paths << curr_path if @board.at(coord) == 'S'
+      until queue.empty?
+        first = queue.shift
+        curr = first.values.flatten
+        string = first.keys[0]
 
-      moves = all_possible_moves(coord).flatten(1)
-      pp "moves => #{moves}"
-      moves.each do |move|
-        pp "move => #{move}"
-        all_possible_paths(move, curr_path, paths)
-        pp "paths => #{paths}"
-        curr_path.pop
+        return string += "->#{curr}" if found?(curr)
+
+        append_moves_to_queue(curr, string, queue)
+
       end
-      paths
+    end
+
+    def append_moves_to_queue(coord, string, queue)
+      moves = all_possible_moves(coord).flatten(1)
+      string += "->#{coord}"
+      moves.each do |move|
+        queue << { string => move }
+      end
+    end
+
+    # returns true if given coord data is 'S' , 'S' is for stop.
+    def found?(coord)
+      @board.at(coord) == 'S'
     end
   end
 end
