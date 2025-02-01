@@ -16,7 +16,7 @@ module KnightTravails
 
     # possible moves_from each direction from given coords.
     def moves_from((x_coord, y_coord), direction, board) # rubocop:disable Metrics/MethodLength
-      @current_direction = @@directions[direction]
+      change_direction(direction)
       case direction
       when 0
         vertical_side_moves_at(x_coord - 2, y_coord, board)
