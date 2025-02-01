@@ -3,8 +3,9 @@
 <!--toc:start-->
 - [Table of contents](#table-of-contents)
   - [Knight Travails](#knight-travails)
-  - [📦 Structure](#structure)
+  - [📦 Structure](#📦-structure)
   - [🛠 Features](#-features)
+  - [🫣 Peek](#🫣-peek)
 <!--toc:end-->
 
 ## Knight Travails
