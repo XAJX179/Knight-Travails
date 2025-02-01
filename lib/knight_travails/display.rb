@@ -27,5 +27,12 @@ module KnightTravails
         end
       end
     end
+
+    def add_paths(paths)
+      paths = paths.scan(/\[(\d+), (\d+)\]/).map { |x, y| [x.to_i, y.to_i] }
+      paths.shift
+      paths.pop
+      paths.each { |p| insert(p, 'P') }
+    end
   end
 end

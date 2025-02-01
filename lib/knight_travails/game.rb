@@ -18,7 +18,11 @@ module KnightTravails
       paths = find_shortest_path(start)
       pp "paths => #{paths}"
 
+      @board.add_paths(paths)
+
       @board.to_s
+
+      @board.reset
     end
 
     # finds possible moves for each direction
